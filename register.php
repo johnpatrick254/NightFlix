@@ -26,6 +26,14 @@ require_once "includes/config.php";
             $user = new User($db);
         }
     }
+
+    function getPreviousValue($inputname)
+    {
+        if (isset($_POST[$inputname])) {
+            echo $_POST[$inputname];
+        }
+        return "";
+    }
     ?>
 </head>
 <body>
@@ -50,12 +58,12 @@ require_once "includes/config.php";
 
         </div>
         <form action= "" method="POST">
-            <input type="text" name="firstName" placeholder="First Name"/>
-            <input type="text" name="lastName" placeholder="Last Name"/>
-            <input type="text" name="userName" placeholder="User Name"/>
-            <input type="email" name="email" placeholder="Enter Email"/>
-            <input type="password" name="pass1" placeholder="Enter password"/>
-            <input type="password" name="pass2" placeholder="Confirm Password"/>
+            <input type="text" name="firstName" placeholder="First Name"  value="<?php getPreviousValue('firstName')?>"/>
+            <input type="text" name="lastName" placeholder="Last Name" value="<?php getPreviousValue('lastName')?>"/>
+            <input type="text" name="userName" placeholder="User Name" value="<?php getPreviousValue('userName')?>"/>
+            <input type="email" name="email" placeholder="Enter Email" value="<?php getPreviousValue('email')?>"/>
+            <input type="password" name="pass1" placeholder="Enter password" value="<?php getPreviousValue('pass1')?>"/>
+            <input type="password" name="pass2" placeholder="Confirm Password"/> 
             <input type="submit" name="submitButton" value="Submit"/>
 
         </form>

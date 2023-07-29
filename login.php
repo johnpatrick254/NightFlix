@@ -19,6 +19,12 @@ require_once "includes/config.php";
         $pass1 = $_POST['pass1'];
         $user = new User($db);
     }
+    function getPreviousValue ($inputname){
+        if(isset($_POST[$inputname])){
+            echo $_POST[$inputname];
+        }
+        return;
+    }
     ?>
 </head>
 <body>
@@ -32,6 +38,7 @@ require_once "includes/config.php";
             <?php
             if (isset($_POST['submitButton'])) {
                 if ($user->login($email, $pass1)) {
+                    $_SESSION['user']=$email;
                     echo "<script type='text/javascript'>var linkElement = document.createElement('a');linkElement.setAttribute('href', 'index.php');linkElement.style.display = 'none';document.body.appendChild(linkElement);linkElement.click();</script>";
                 } 
             } else {
@@ -41,8 +48,8 @@ require_once "includes/config.php";
         </div>
         <form action= "" method="POST">
 
-            <input type="email" name="email" placeholder="Enter Email"/>
-            <input type="password" name="pass1" placeholder="Enter password"/>
+        <input type="email" name="email" placeholder="Enter Email" value=" <?php getPreviousValue('email')?>"/>
+            <input type="password" name="pass1" placeholder="Enter password" value="<?php getPreviousValue('pass1') ?>"/>
             <input type="submit" name="submitButton" value="Login"/>
 
         </form>
