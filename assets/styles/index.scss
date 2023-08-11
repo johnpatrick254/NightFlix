@@ -5,6 +5,11 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #333;
 }
+.wrapper{
+    min-width: 1050px;
+    min-height: 100%;
+    background-color: #141414;
+}
 
 .siginin-container {
     background-color: #efefee;
@@ -95,4 +100,57 @@
 
         }
     }
+}
+
+.preview-container{
+    position: relative;
+    display: flex;
+.preview-video,.preview-image{
+    height: 100%;   
+}
+.preview-overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+    .name-details{
+        position: relative;
+        top: 35%;
+        margin-left: 50px;
+        display: flex;
+        flex-flow: column nowrap;
+        h3{
+            color: #fff;
+            font-size: 40px;
+            margin:15px 0 ;
+        }
+        .buttons{
+            button{
+                background-color: rgba(51,51,51,0.4);
+                color: #fff;
+                border: none;
+                min-width: fit-content;
+                padding: 0 25px;
+                height: 50px;
+                max-height: 50px;
+                font-size: 18px;
+                border-radius: 2px;
+                margin-bottom: 15px;
+                margin-right: 5px;
+                align-items: center;
+                cursor: pointer;
+                &:hover{
+                    background-color: #fff;
+                    color: #000;
+                }
+                .icon{
+                    font-size: 18px !important;
+                    color: inherit;
+                    margin-right: 3px;
+                }
+            }
+        }
+    }
+    
+}
 }

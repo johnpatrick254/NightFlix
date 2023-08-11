@@ -52,7 +52,7 @@ class User
                 $result = $stmt->fetch(PDO::FETCH_ASSOC);
                 $stmt->closeCursor();
                 if ($result['user_exists'] == 0) {
-                    echo "<span class='err-msg'>wrong user or password</span>";
+                    echo "<span class='err-msg'>wrong username or password</span>";
                 } else {
                     return true;
                 }

@@ -1,9 +1,7 @@
 <?php
 declare(strict_types=1);
-spl_autoload_register(function ($classname) {
-    require_once "includes/Classes/$classname.php";
-});
-require_once "includes/config.php";
+require_once dirname(__DIR__) . '/nightflix/includes/Header.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +9,7 @@ require_once "includes/config.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type = "text/css" href="assets/styles/index.css">
-    <title>Document</title>
+    <title>NightFlix</title>
     <?php
 
     if (isset($_POST['submitButton'])) {
