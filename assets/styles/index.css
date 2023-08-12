@@ -8,8 +8,16 @@
 
 .wrapper {
   min-width: 1050px;
-  min-height: 100%;
+  min-height: 100vh;
   background-color: #141414;
+}
+
+h3 {
+  color: #e5e5e5;
+}
+
+a {
+  text-decoration: none;
 }
 
 .siginin-container {
@@ -97,9 +105,12 @@
 .preview-container {
   position: relative;
   display: flex;
+  width: 100%;
+  height: 65vh;
 }
 .preview-container .preview-video, .preview-container .preview-image {
   height: 100%;
+  width: 100%;
 }
 .preview-container .preview-overlay {
   width: 100%;
@@ -142,6 +153,48 @@
   font-size: 18px !important;
   color: inherit;
   margin-right: 3px;
+}
+
+.preview-container.small {
+  width: 230px;
+  height: 129px;
+  margin-right: 4px;
+  display: inline-flex;
+}
+.preview-container.small img {
+  width: 100%;
+}
+
+.preview-categories {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0 50px;
+}
+.preview-categories .category a h3 {
+  padding: 10px 0;
+}
+.preview-categories .category a h3 :hover {
+  color: #fff;
+}
+
+.entities {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.entities::-webkit-scrollbar {
+  display: none;
+}
+
+.errorBanner {
+  color: #fff;
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=index.css.map */
