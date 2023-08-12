@@ -57,5 +57,19 @@ class Categories
 
   }
 
+  public function showCategories($categoryId,$title=null){
+    $query = $this->con->prepare("SELECT * FROM categories WHERE id=:id;");
+    $query->bindValue(":id",$categoryId); 
+    $query->execute();
+
+    $html = "<div class='season no-scroll'>";
+
+    while($categories = $query->fetch(PDO::FETCH_ASSOC)){
+        $html .= $this->addCategoryHTML($categories,true,true,$title);
+    }
+
+    return $html ."</div>";
+  }
+
 
 }

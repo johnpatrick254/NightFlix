@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Fira Sans", sans-serif;
   color: #333;
 }
 
@@ -14,6 +15,10 @@
 
 h3 {
   color: #e5e5e5;
+  padding: 10px 0;
+}
+h3:hover {
+  color: #fff;
 }
 
 a {
@@ -173,7 +178,7 @@ a {
 .preview-categories .category a h3 {
   padding: 10px 0;
 }
-.preview-categories .category a h3 :hover {
+.preview-categories .category a h3:hover {
   color: #fff;
 }
 
@@ -195,6 +200,56 @@ a {
   width: 100%;
   font-size: 18px;
   text-align: center;
+}
+
+.season {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 50px;
+}
+
+.videos {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.videos::-webkit-scrollbar {
+  display: none;
+}
+
+.episode-container {
+  display: inline-flex;
+  justify-content: center;
+  margin-right: 4px;
+}
+.episode-container .content {
+  display: flex;
+  flex-direction: column;
+  width: 230px;
+}
+.episode-container .video-info {
+  max-height: 200px;
+  overflow-y: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.episode-container .video-info::-webkit-scrollbar {
+  display: none;
+}
+.episode-container .video-info h4 {
+  padding: 10px 0;
+}
+.episode-container .video-info h4, .episode-container .video-info span {
+  color: #fff;
+  width: 100%;
+  white-space: normal;
+}
+.episode-container img {
+  width: 230px;
+  height: 129px;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=index.css.map */
