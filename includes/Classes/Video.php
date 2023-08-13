@@ -8,13 +8,13 @@ class Video{
     if(is_array($input)){
         $this->data = $input;
     }else{
-        $query = $this->conn->prepare("SELECT * FROM entities WHERE id=:id;");
+        $query = $this->conn->prepare("SELECT * FROM videos WHERE id=:id;");
         $query->bindValue(":id",$input);
         $query->execute();
         $this->data = $query->fetch(PDO::FETCH_ASSOC);
     }
 
-    $this->entity = new Entity($this->conn,$this->data['id']);
+    $this->entity = new Entity($this->conn,$this->data['entityId']);
 
   }
 

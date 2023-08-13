@@ -1,7 +1,9 @@
 <?php
 declare(strict_types=1);
-require_once dirname(__DIR__) . '/nightflix/includes/Header.php';
-
+require_once "includes/config.php";
+spl_autoload_register(function ($className){
+require_once "includes/Classes/$className.php";
+});
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +26,10 @@ require_once dirname(__DIR__) . '/nightflix/includes/Header.php';
         return;
     }
     ?>
+    <link rel="apple-touch-icon" sizes="180x180" href="includes/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="includes/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="includes/favicon-16x16.png">
+ 
 </head>
 <body>
     <div class="siginin-container">

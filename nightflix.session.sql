@@ -1,1 +1,10 @@
-SELECT EXISTS(SELECT username FROM users WHERE email='123@123.com' AND password="11bfebc7731ca3753fb7a8ee33c50d29bd61e784f4e1dd3ec2b758d3bc6cf1b1b46837bdeb52a11b58b2c2b2f017a84fe74dd5625ba89d12d9b0ecee5eda9353");
+DROP TABLE videoProgress;
+CREATE TABLE videoProgress
+        (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            username VARCHAR(150),
+            videoId INT,
+            progress INT DEFAULT 0,
+            finished TINYINT DEFAULT 0,
+            dateModified DATETIME DEFAULT CURRENT_TIMESTAMP
+        )

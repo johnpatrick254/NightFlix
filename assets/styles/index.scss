@@ -274,3 +274,34 @@ a{
     }
 }
 
+.watch-container{
+    video{
+        width: 100%;
+    }
+}
+
+.video-controls{
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0,0,0,0.3);
+
+    h1{
+        color: #fff;
+    }
+    button{
+        font-size: 50px;
+        padding: 50px;
+        color: #fff;
+        background-color: transparent;
+        border:none;
+        &:hover{
+            cursor: pointer;
+        } 
+        i{
+            color: inherit;
+        }
+    }
+}
